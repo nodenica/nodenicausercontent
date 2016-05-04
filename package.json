@@ -1,0 +1,26 @@
+{
+  "name": "nodenicausercontent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "hapi": "13.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodenica/nodenicausercontent.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nodenica/nodenicausercontent/issues"
+  },
+  "homepage": "https://github.com/nodenica/nodenicausercontent#readme",
+  "engines": {
+    "node": "6.0.0"
+  }
+}
