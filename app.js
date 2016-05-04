@@ -1,7 +1,9 @@
 'use strict';
 
 const Hapi = require('hapi');
-const fs = require('fs');
+const Inert = require('inert');
+const Fs = require('fs');
+const Path = require('path');
 const port = process.env.PORT || 5000;
 
 // Create a server with a host and port
@@ -10,14 +12,27 @@ server.connection({
   port: port,
 });
 
+server.register(Inert, () => {});
+
 // Add the route
 server.route({
   method: 'GET',
   path:'/',
   handler: function (request, reply) {
-    fs.readFile('./index.json', (err, data) => {
+    Fs.readFile('./index.json', (err, data) => {
       reply(JSON.parse(data)).code(200);
     });
+  },
+});
+
+server.route({
+  method: 'GET',
+  path: '/dist/{param*}',
+  handler: {
+    directory: {
+      path: 'dist',
+      listing: true,
+    },
   },
 });
 
