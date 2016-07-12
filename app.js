@@ -17,7 +17,7 @@ server.register(Inert, () => {});
 // Add the route
 server.route({
   method: 'GET',
-  path:'/',
+  path: '/',
   handler: function (request, reply) {
     Fs.readFile('./index.json', (err, data) => {
       reply(JSON.parse(data)).code(200);
@@ -38,9 +38,9 @@ server.route({
 
 // Start the server
 server.start((err) => {
-
   if (err) {
     throw err;
   }
+
   console.log('Server running at:', server.info.uri);
 });
